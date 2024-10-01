@@ -20,7 +20,8 @@
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "postinstall": "electron-builder install-app-deps",
     "lc3": "yarn add lc3-backend@file:../backend",
-    "release": "node .electron-vue/build.js && electron-builder --publish always"
+    "release": "node .electron-vue/build.js && electron-builder --publish always",
+    "build-backend": "npm run --prefix ../backend build && npm install --install-links lc3-backend@../backend"
   },
   "extraResources": "",
   "buildResources": "static",
@@ -89,6 +90,7 @@
     "vuex": "^2.3.1"
   },
   "devDependencies": {
+    "@neon-rs/cli": "^0.1.81",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
